@@ -5,17 +5,14 @@
         require_once("db.php");
 
         $id = $_POST['id'];
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $address = $_POST['address'];
+        $isBlocked = $_POST['isBlocked'];
 
-        $query = "UPDATE users SET name = '$name', email = '$email', password = '$password', address = '$address' WHERE id = '$id'";
+        $query = "UPDATE user SET isBlocked = '$isBlocked' WHERE id = '$id'";
         $result = $mysql -> query($query);
 
         if ($mysql->affected_rows > 0) {
             if ($result === TRUE) {
-                echo "User Updated";
+                echo "User Blocked";
             }else{
                 echo "Error";
             }
