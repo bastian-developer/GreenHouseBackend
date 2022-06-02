@@ -8,14 +8,14 @@
         $name = $_POST['name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $address = $_POST['address'];
+        $photo = $_POST['photo'];
 
-        $query = "UPDATE users SET name = '$name', email = '$email', password = '$password', address = '$address' WHERE id = '$id'";
+        $query = "UPDATE user SET name = '$name', email = '$email', password = '$password', photo = '$photo' WHERE id = '$id'";
         $result = $mysql -> query($query);
 
         if ($mysql->affected_rows > 0) {
             if ($result === TRUE) {
-                echo "User Updated";
+                echo "Profile Updated";
             }else{
                 echo "Error";
             }
