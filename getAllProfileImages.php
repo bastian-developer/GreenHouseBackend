@@ -3,7 +3,7 @@
  
  $sql = "select url from icon";
  
- $res = mysqli_query($con,$sql);
+ $res = mysqli_query($mysql,$sql);
  
  $result = array();
  
@@ -13,4 +13,6 @@
  
  echo json_encode(array("result"=>$result));
  
- mysqli_close($con);
+ mysqli_close($mysql);
+
+ ?>

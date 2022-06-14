@@ -8,9 +8,8 @@
         $name = $_POST['name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $photo = $_POST['photo'];
 
-        $query = "UPDATE user SET name = '$name', email = '$email', password = '$password', photo = '$photo' WHERE id = '$id'";
+        $query = "UPDATE user SET name = '$name', email = '$email', password = '$password' WHERE id = '$id'";
         $result = $mysql -> query($query);
 
         if ($mysql->affected_rows > 0) {
