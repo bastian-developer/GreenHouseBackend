@@ -6,7 +6,7 @@
 
         $id = $_GET['id'];
 
-        $query = "SELECT * FROM plants WHERE id = '$id'";
+        $query = "SELECT * FROM plant WHERE id = '$id'";
         $result = $mysql->query($query);
 
         if ($mysql->affected_rows > 0) {
@@ -23,3 +23,4 @@
         $mysql->close();
 
     }
+?>
