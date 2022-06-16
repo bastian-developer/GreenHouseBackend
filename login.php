@@ -18,6 +18,7 @@
             }
 
             echo json_encode($array);
+
         }else{
 
             $query2 = "UPDATE user SET tries = tries - 1 WHERE email = '$email'";
@@ -30,3 +31,4 @@
         $mysql->close();
 
     }
+?>

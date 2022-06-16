@@ -8,9 +8,8 @@
         $name = $_POST['name'];
         $type = $_POST['type'];
         $origin = $_POST['origin'];
-        $photos = $_POST['photos'];
 
-        $query = "UPDATE plants SET name = '$name', type = '$type', origin = '$origin', photos = '$photos' WHERE id = '$id'";
+        $query = "UPDATE plant SET name = '$name', type = '$type', origin = '$origin' WHERE id = '$id'";
         $result = $mysql -> query($query);
 
         if ($mysql->affected_rows > 0) {
@@ -26,3 +25,4 @@
         $mysql->close();
     
     }
+?>

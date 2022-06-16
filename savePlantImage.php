@@ -1,13 +1,13 @@
-<?php
+ <?php
  
  if($_SERVER['REQUEST_METHOD']=='POST'){
  
- $userId = $_POST['userId'];
+ $plantId = $_POST['plantId'];
  $image = $_POST['image'];
  
  require_once('db.php');
  
- $sql ="SELECT id FROM icon ORDER BY id ASC";
+ $sql ="SELECT id FROM photo ORDER BY id ASC";
  
  $res = mysqli_query($mysql, $sql);
  
@@ -17,18 +17,18 @@
  $id = $row['id'];
  }
  
- $path = "user_uploads/$id.png";
+ $path = "user_uploads/$id.Plant.png";
  
  $actualpath = "http://192.168.0.3/greenhousedb/$path";
  
- $sql = "INSERT INTO icon (userId, url) VALUES ('$userId','$actualpath')";
+ $sql = "INSERT INTO photo (plantId, url) VALUES ('$plantId','$actualpath')";
  
  if(mysqli_query($mysql,$sql)){
  file_put_contents($path,base64_decode($image));
  echo "Successfully Uploaded";
  }
 
- $query2 = "UPDATE user SET photo='$actualpath' WHERE id='$userId'";
+ $query2 = "UPDATE plant SET photos='$actualpath' WHERE id='$plantId'";
  $result2 = $mysql -> query($query2);
 
  mysqli_close($mysql);

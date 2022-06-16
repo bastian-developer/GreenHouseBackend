@@ -5,7 +5,7 @@
         require_once("db.php");
         $id = $_POST['id'];
 
-        $query = "DELETE FROM plants WHERE id = '$id'";
+        $query = "DELETE FROM plant WHERE id = '$id'";
         $result = $mysql->query($query);
 
         if ($mysql->affected_rows > 0) {
@@ -18,3 +18,4 @@
 
         $mysql->close();
     }
+?>
