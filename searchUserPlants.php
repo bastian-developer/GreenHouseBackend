@@ -21,6 +21,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         array_push($res,array('origin'=>$row['origin']));
         array_push($res,array('photos'=>$row['photos']));
 
+        array_push($res,array('photos'=>$row['waterSpent']));
+        array_push($res,array('photos'=>$row['temperature']));
+        array_push($res,array('photos'=>$row['humidity']));
+        array_push($res,array('photos'=>$row['water']));
+        array_push($res,array('photos'=>$row['light']));
+
         }
         
         echo json_encode(array("result"=>$res));

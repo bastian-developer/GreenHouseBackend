@@ -19,7 +19,7 @@
  
  $path = "user_uploads/$id.Plant.png";
  
- $actualpath = "http://192.168.0.3/greenhousedb/$path";
+ $actualpath = "http://$globalIp/greenhousedb/$path";
  
  $sql = "INSERT INTO photo (plantId, url) VALUES ('$plantId','$actualpath')";
  

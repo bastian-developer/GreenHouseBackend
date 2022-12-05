@@ -7,6 +7,7 @@
         $userId = $_POST['userId'];
         $id = $_POST['id'];
     
+        $resetWater = 0;
 
 
         $query = "SELECT * FROM plant WHERE id = '$id'";
@@ -22,6 +23,12 @@
                 $origin = $row['origin'];
                 $photos = $row['photos'];
 
+                $waterSpent = $row['waterSpent'];
+                $temperature = $row['temperature'];
+                $humidity = $row['humidity'];
+                $water = $row['water'];
+                $light = $row['light'];
+
             }
 
         }else{
@@ -29,7 +36,7 @@
         }
 
 
-        $query2 = "INSERT INTO plant (userId, name, type, origin, photos) VALUES ('$userId','$name', '$type', '$origin', '$photos')";
+        $query2 = "INSERT INTO plant (userId, name, type, origin, photos, waterSpent, temperature, humidity, water, light) VALUES ('$userId','$name', '$type', '$origin', '$photos', '$resetWater', '$temperature', '$humidity', '$water', '$light')";
         $result2 = $mysql -> query($query2);
 
         if($result2 === TRUE) {

@@ -10,7 +10,13 @@
         $origin = $_POST['origin'];
         $photos = $_POST['photos'];
 
-        $query = "INSERT INTO plant (userId, name, type, origin, photos) VALUES ('$userId','$name', '$type', '$origin', '$photos')";
+        $waterSpent = $_POST['waterSpent'];
+        $temperature = $_POST['temperature'];
+        $humidity = $_POST['humidity'];
+        $water = $_POST['water'];
+        $light = $_POST['light'];
+
+        $query = "INSERT INTO plant (userId, name, type, origin, photos, waterSpent, temperature, humidity, water, light) VALUES ('$userId','$name', '$type', '$origin', '$photos', '$waterSpent', '$temperature', '$humidity', '$water', '$light')";
         $result = $mysql -> query($query);
 
         if($result === TRUE) {

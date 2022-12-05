@@ -8,8 +8,12 @@
         $name = $_POST['name'];
         $type = $_POST['type'];
         $origin = $_POST['origin'];
+        $temperature = $_POST['temperature'];
+        $humidity = $_POST['humidity'];
+        $water = $_POST['water'];
+        $light = $_POST['light'];
 
-        $query = "UPDATE plant SET name = '$name', type = '$type', origin = '$origin' WHERE id = '$id'";
+        $query = "UPDATE plant SET name = '$name', type = '$type', origin = '$origin', temperature = '$temperature', humidity = '$humidity', water = '$water', light = '$light' WHERE id = '$id'";
         $result = $mysql -> query($query);
 
         if ($mysql->affected_rows > 0) {

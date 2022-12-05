@@ -23,6 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 'type'=>$row['type'],
                 'origin'=>$row['origin'],
                 'photos'=>$row['photos'],
+
+                'waterSpent'=>$row['waterSpent'],
+                'temperature'=>$row['temperature'],
+                'humidity'=>$row['humidity'],
+                'water'=>$row['water'],
+                'light'=>$row['light'],
             ));
         }
 
