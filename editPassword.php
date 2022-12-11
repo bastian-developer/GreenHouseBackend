@@ -5,10 +5,9 @@
         require_once("db.php");
 
         $id = $_POST['id'];
-        $name = $_POST['name'];
-        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-        $query = "UPDATE user SET name = '$name', email = '$email' WHERE id = '$id'";
+        $query = "UPDATE user SET password = '$password' WHERE id = '$id'";
         $result = $mysql -> query($query);
 
         if ($mysql->affected_rows > 0) {
