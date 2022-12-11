@@ -5,13 +5,13 @@
         require_once("db.php");
 
         $id = $_POST['id'];
-
+        $plantID = $_POST['plantID'];
         $airTemperature = $_POST['airTemperature'];
         $airHumidity = $_POST['airHumidity'];
         $soilHumidity = $_POST['soilHumidity'];
         $ambientLight = $_POST['ambientLight'];
 
-        $query = "UPDATE status SET airTemperature = '$airTemperature', airHumidity = '$airHumidity', soilHumidity = '$soilHumidity', ambientLight = '$ambientLight' WHERE id = '$id'";
+        $query = "UPDATE status SET name = '$plantID', airTemperature = '$airTemperature', airHumidity = '$airHumidity', soilHumidity = '$soilHumidity', ambientLight = '$ambientLight' WHERE id = '$id'";
         $result = $mysql -> query($query);
 
         if ($mysql->affected_rows > 0) {
